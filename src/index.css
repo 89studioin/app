@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-gold-50: #fefcf0;
+  --color-gold-100: #fdf7d3;
+  --color-gold-200: #faeb9a;
+  --color-gold-300: #f6d859;
+  --color-gold-400: #f1bf24;
+  --color-gold-500: #d69e2e;
+  --color-gold-600: #b57c1e;
+  --color-gold-700: #935d16;
+  --color-gold-800: #744310;
+  --color-gold-900: #542b0c;
+  --color-gold-950: #331505;
+
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom styles for luxury background grids, glassmorphism and glossy gold glows */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #030304;
+    color: #f3f4f6;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  /* Custom gold scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050507;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #c39a3b22;
+    border-radius: 4px;
+    border: 1px solid #c39a3b44;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c39a3bb8;
+  }
+}
+
+/* Luxury abstract grid background */
+.grid-bg-mesh {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(195, 154, 59, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(195, 154, 59, 0.03) 1px, transparent 1px);
+}
+
+/* Radial golden glows behind sections */
+.gold-glow-radial {
+  background: radial-gradient(circle 500px at 50% 50%, rgba(214, 158, 46, 0.08), transparent 70%);
+}
+
+.gold-glow-radial-sm {
+  background: radial-gradient(circle 300px at 50% 50%, rgba(214, 158, 46, 0.05), transparent 70%);
+}
+
+/* Luxury card borders and text shines */
+.luxury-gold-border {
+  border: 1px solid rgba(195, 154, 59, 0.2);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-gold-border:hover {
+  border-color: rgba(195, 154, 59, 0.6);
+  box-shadow: 0 0 25px rgba(195, 154, 59, 0.15);
+}
+
+/* Shiny font masks */
+.gold-text-gradient {
+  background: linear-gradient(135deg, #fdf2cd 0%, #d69e2e 50%, #b57c1e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.silver-text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Interactive dynamic card background shine */
+.luxury-glass {
+  background: rgba(8, 8, 10, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
